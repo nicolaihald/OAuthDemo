@@ -12,6 +12,8 @@ namespace OAuthDemo
         {
             HttpConfiguration config = new HttpConfiguration();
             WebApiConfig.Register(config);
+
+            // wire up ASP.NET Web API to our Owin server pipeline.
             app.UseWebApi(config);
         }
 
