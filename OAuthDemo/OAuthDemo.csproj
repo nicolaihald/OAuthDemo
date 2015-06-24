@@ -106,13 +106,15 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FreeController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
-    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Models\Models.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\DemoAuthorizationServerProvider.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="OAuthDemo.json.postman_collection" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
