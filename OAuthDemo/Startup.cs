@@ -2,6 +2,7 @@
 using System.Web.Http;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
+using OAuthDemo.Authentication;
 using OAuthDemo.Providers;
 using Owin;
 
@@ -16,7 +17,11 @@ namespace OAuthDemo
             HttpConfiguration config = new HttpConfiguration();
             WebApiConfig.Register(config);
 
-            ConfigureOAuth(app);
+            //ConfigureOAuth(app);
+            app.UseSimpleAuthentication(new SimpleAuthenticationOptions
+            {
+                SharedSecret = "FOO"
+            });
 
             // wire up ASP.NET Web API to our Owin server pipeline.
             app.UseWebApi(config);
