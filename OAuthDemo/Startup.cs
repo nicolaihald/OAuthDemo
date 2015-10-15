@@ -5,6 +5,7 @@ using Microsoft.Owin.Security.OAuth;
 using OAuthDemo.Authentication;
 using OAuthDemo.Providers;
 using Owin;
+using Swashbuckle.Application;
 
 [assembly: OwinStartup(typeof(OAuthDemo.Startup))]
 namespace OAuthDemo
@@ -16,6 +17,7 @@ namespace OAuthDemo
         {
             HttpConfiguration config = new HttpConfiguration();
             WebApiConfig.Register(config);
+            SwaggerConfig.Register(config);
 
             //ConfigureOAuth(app);
             app.UseSimpleAuthentication(new SimpleAuthenticationOptions
@@ -25,6 +27,7 @@ namespace OAuthDemo
 
             // wire up ASP.NET Web API to our Owin server pipeline.
             app.UseWebApi(config);
+
         }
 
 

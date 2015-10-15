@@ -7,9 +7,16 @@ using System.Web.Http;
 
 namespace OAuthDemo.Controllers
 {
+    /// <summary>
+    ///     Test Controller.
+    /// </summary>
     [RoutePrefix("api/users")]
     public class UsersController : ApiController
     {
+        /// <summary>
+        ///     Returns a list of users.
+        /// </summary>
+        /// <returns></returns>
         [Authorize]
         [Route("")]
         public IHttpActionResult Get()
